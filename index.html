@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password_generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    
+    <div class="container">
+
+        <h1>Password Generator</h1>
+
+        <div class="display-container">
+            
+            <!-- here the concept of readonly is used as in this we can only read the contents and can't write anything -->
+            <input readonly placeholder="Password" class="display" data-passwordDisplay > <!-- here "data-passwordDisplay" is custom selector attribute, means using this we can directly fetch the values by querySelector -->
+             
+            <button class="copyBtn" data-copy> <!-- here "data-copyMsg"is again a custom attribute  -->
+                <span class="toolTip" data-copyMsg>copy</span> <!-- whenever we click on the image this text is displayed -->
+                <img src="./assets/copy.svg" alt="copy" width="23" height="23" data-copy> <!-- here " data-copy" is a custom attribute-->
+            </button>
+
+        </div> 
+
+        <div class="input-container">
+
+            <!-- password length section -->
+            <div class="length-container">
+                <p>Password Length</p>
+                <p data-lengthNumber>0</p>
+            </div>
+             
+            <!-- how to make a slider..,(set the max and min value for the slider ) -->
+            <input type="range" min="1" max="20" class="slider" step="1" data-lengthSlider> <!-- "step" allows the movement of the slider by 1 value -->
+
+            <!-- checkbox -->
+            <div class="check">
+                <input type="checkbox" id="uppercase">
+                <label for="uppercase">Includes Uppercase letters</label>
+            </div>
+            <div class="check">
+                <input type="checkbox" id="lowercase">
+                <label for="lowercase">Includes Lowercase letters</label>
+            </div>
+            <div class="check">
+                <input type="checkbox" id="numbers">
+                <label for="numbers">Includes Numbers</label>
+            </div>
+            <div class="check">
+                <input type="checkbox" id="symbols">
+                <label for="symbols">Includes Symbols</label>
+            </div>
+
+            <!-- strength section-->
+            <div class="strength-container">
+               <p>Strength</p>
+               <div class="indicator "data-indicator></div>
+            </div>
+
+            <!-- generate button-->
+
+            <button class="generateButton">Generate Password</button>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
